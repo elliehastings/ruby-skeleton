@@ -1,9 +1,23 @@
 require "greeter"
+require "ostruct"
 
 describe Greeter do
   describe ".say_hello" do
-    it "says hello to the right person" do
-      expect(Greeter.say_hello("Ellie")).to eq("Hello Ellie! 👋")
+    context "real person" do
+      it "says hello to the right person" do
+        person = OpenStruct.new(name: "Ellie")
+
+        expect(Greeter.say_hello(person)).to eq("Hello Ellie! 👋")
+      end
+    end
+
+    context "mock person" do
+      it "says hello to the right person" do
+        mock_greeter = class_double("Greeter")
+        allow(mock_greeter).to receive(:say_hello).and_return("Hii Bilbo")
+
+        expect(mock_greeter.say_hello("foo")).to eq("Hii Bilbo")
+      end
     end
   end
 end
