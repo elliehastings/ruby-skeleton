@@ -15,3 +15,9 @@ To run specs
 ```bash
 bundle exec rspec
 ```
+
+To run a Sinatra server
+
+```bash
+ruby server.rb
+```
