@@ -1,5 +1,5 @@
-require 'sinatra'
+require "sinatra"
 
-get '/' do
-  'Hello world!'
+get "/" do
+  "Hello world!"
 end

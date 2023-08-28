@@ -1,7 +1,7 @@
 # See usage documentation at https://github.com/jnunemaker/httparty
 # Examples at https://github.com/jnunemaker/httparty/tree/master/examples
 
-require 'httparty'
+require "httparty"
 
 class ApiManager
   include HTTParty
@@ -21,15 +21,15 @@ class ApiManager
   end
 end
 
-api_manager = ApiManager.new('https://jsonplaceholder.typicode.com')
-res = api_manager.get('/posts')
+api_manager = ApiManager.new("https://jsonplaceholder.typicode.com")
+res = api_manager.get("/posts")
 puts res
 
 post_body = {
-  title: 'foo',
-  body: 'bar',
-  userId: 1,
+  title:  "foo",
+  body:   "bar",
+  userId: 1
 }
-opts = {headers: {"User-Agent" => "Httparty"}}
-post_res = api_manager.post('/posts', { body: post_body, **opts})
+opts = { headers: { "User-Agent" => "Httparty" } }
+post_res = api_manager.post("/posts", { body: post_body, **opts })
 puts post_res
