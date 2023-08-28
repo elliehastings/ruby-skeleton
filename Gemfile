@@ -1,7 +1,7 @@
 # Gemfile
 source 'https://rubygems.org'
 
-gem 'httpparty'
+gem 'faraday'
 gem 'puma'
 gem 'rake'
 gem 'rspec'
